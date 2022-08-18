@@ -23,9 +23,7 @@ class ProfileAdmin(admin.ModelAdmin):
         ('Função', {
             'fields': ('role',)
         }),
-        ('Extras', {
-            'fields': ('departments',)
-        }),
+        
     )
  
     def departmentsList(self, obj):
