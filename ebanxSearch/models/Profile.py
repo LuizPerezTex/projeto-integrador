@@ -10,8 +10,11 @@ class Profile(models.Model):
     token = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
-    department = models.ManyToManyField(Department,	blank=True,	related_name='departments')
-    
+    department = models.ManyToManyField(Department,	blank=True)
+
+
+    def departmentsList(self, obj):
+        return [i.name for i in obj.department.all()]
 
     def	__str__(self):
         return '{}'.format(self.user.username)
